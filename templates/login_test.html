@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="css/foundation.css" />
+<link rel="stylesheet" href="css/app.css" />
+<link rel="stylesheet" href="js/foundation.js">
+<link rel="stylesheet" href="js/foundation.min.js">
+<link rel="stylesheet" href="js/vendor/jquery.min.js">
+<link rel="stylesheet" href="js/vendor/what-input.min.js">
+<form id="#preSignupForm" data-abide="ajax" onsubmit="return false;">
+           <p><center><img src="{{ asset( '/img/logo.png' ) }}"><br>
+           Provide your details and receive the latest update</center></p>
+               <div class="row">
+                   <div class="large-4 medium-4 small-12 small-centered columns">
+                       <label>
+                           First Name
+                           <input type="text" name="firstName" id="firstName" placeholder="First Name" required/>
+                       </label>
+                       <small class="error">Provide your first name</small>
+                   </div>
+               </div>
+
+               <div class="row">
+                   <div class="large-4 medium-4 small-12 small-centered columns">
+                       <label>
+                           Last Name
+                           <input type="text" name="lastName" id="lastName" placeholder="Last Name" required/>
+                       </label>
+                       <small class="error">Provide your last name</small>
+                   </div>
+               </div>
+
+               <div class="row">
+                   <div class="large-4 medium-4 small-12 small-centered columns">
+                       <label>
+                           Email Address
+                           <input type="text" name="email" id="email" placeholder="example@address.com" required/>
+                       </label>
+                       <small class="error">Provide a valid email address</small>
+                   </div>
+               </div>
+
+               <div class="row">
+                   <div class="large-4 medium-4 small-12 small-centered columns">
+                       <label>
+                           Choose your level of interest
+
+
+                           <select name="type" id="type">
+                           {% set datas = [{'type':'Business'} ,{'type':'Personal'} ,{'type':'Both'} ] %}
+                               {% for data in datas %}
+                                   <option value="{{ data.type }}" {{selected(customer.type, data.type )}}>{{ data.type }}</option>
+                               {% endfor %}
+                           </select>
+                       </label>
+                       <small class="error">Provide a valid option</small>
+                   </div>
+               </div>
+
+               <div class="row">
+                   <div class="large-4 medium-4 small-12 small-centered columns">
+                       <input name="autoRegisterMe" id="autoRegisterMe" type="checkbox">
+                       <label for="autoRegisterMe">Auto register me when product launches.</label>
+                   </div>
+               </div>
+
+               <div class="row">
+                   <div class="large-4 medium-4 small-12 small-centered columns">
+                       <center><a id="btnSubmit" role="button" aria-label="submit form" href="#" class="button custom tiny">Yes, count me in!</a></center>
+                   </div>
+               </div>
+           </form>

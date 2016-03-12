@@ -1,0 +1,53 @@
+<html>
+<link rel="stylesheet" href="css/foundation.css" />
+<link rel="stylesheet" href="css/app.css" />
+<link rel="stylesheet" href="js/foundation.js">
+<link rel="stylesheet" href="js/foundation.min.js">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <form>
+
+          <div class="row">
+            <div class="large-4 columns">
+              <label>Nome:
+                <input type="text" name="nome" placehalder="Nome" placeholder="Nome" required>
+              </label>
+            </div>
+              <div class="">
+                <div class="large-4  columns">
+                <label>
+                Sobrenome:
+                  <input type="text" name="sobrenome" placeholder="Sobrenome" required
+                </label>
+              </div>
+            </div>
+          </div>
+        <div class="row">
+        <div class="medium-6  columns">
+            <label>E-mail
+                <input type="email" placeholder="E-mail" required="">
+            </label>
+            <label>
+                Senha:
+                <input type="password" placeholder="Senha" required >
+            </label>
+            <label>
+            Repita a senha:
+                <input type="password" placeholder="Digite a senha novamente" aria-describedby="exampleHelpText" required >
+            </label>
+            <input type="submit" name="cadastro" value="Cadastrar" class="button" href="#">
+        </div>
+      </div>
+    </form>
+</html>
+<script>
+function formatar(mascara, documento){
+var i = documento.value.length;
+var saida = mascara.substring(0,1);
+var texto = mascara.substring(i)
+
+if (texto.substring(0,1) != saida){
+          documento.value += texto.substring(0,1);
+}
+
+}
+</script>
